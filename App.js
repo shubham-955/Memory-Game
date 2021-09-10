@@ -115,9 +115,9 @@ class App extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <View style={{ height: 50, backgroundColor: 'orange', elevation: 5, justifyContent: 'center' }}>
-          <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold', paddingLeft: 10 }}>MATCH THE FOLLOWING</Text>
+      <View style={styles.container}>
+        <View style={styles.headerView}>
+          <Text style={styles.headerTitle}>MATCH THE FOLLOWING</Text>
         </View>
         <View style={{ marginTop: 20 }}>
           <FlatList
@@ -137,7 +137,7 @@ class App extends Component {
             numColumns={4}
           />
         </View>
-      </View>
+      </View >
     )
   }
 }
@@ -145,8 +145,23 @@ class App extends Component {
 export default App;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  headerView: {
+    height: 50,
+    backgroundColor: 'orange',
+    elevation: 5,
+    justifyContent: 'center'
+  },
+  headerTitle: {
+    color: 'black', 
+    fontSize: 20, 
+    fontWeight: 'bold', 
+    paddingLeft: 10 
+  },
   itemView: {
-    width: ((width)/4)-20,
+    width: ((width) / 4) - 20,
     height: 55,
     backgroundColor: "#f2f2f2",
     elevation: 5,
