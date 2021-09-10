@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, FlatList, ToastAndroid, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, FlatList, ToastAndroid, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { margin } from 'styled-system';
 
+var { width } = Dimensions.get('window');
 class App extends Component {
+
 
   state = {
     data: [],
@@ -143,7 +146,7 @@ export default App;
 
 const styles = StyleSheet.create({
   itemView: {
-    width: 70,
+    width: ((width)/4)-20,
     height: 55,
     backgroundColor: "#f2f2f2",
     elevation: 5,
