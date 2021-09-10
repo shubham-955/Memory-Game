@@ -63,7 +63,6 @@ class App extends Component {
     this.setState({ data: newArray })
     let selectedItem1 = this.state.selectedItem1;
     let selectedId1 = this.state.selectedId1;
-    console.log(selectedItem1, name);
 
     if (selectedItem1 == null && selectedId1 == null) {
       this.setState({
@@ -102,13 +101,11 @@ class App extends Component {
         }
       } else {
         ToastAndroid.show("Pair not matched!", ToastAndroid.SHORT);
-        // console.log(this.state.data);
         let newArray2 = this.state.data;
         newArray2.forEach((value) => {
           return value.isSelected = false
         })
         this.setState({ data: newArray2, selectedItem1: null, selectedId1: null })
-        // console.log(this.state.data)
       }
     }
   }
@@ -119,7 +116,7 @@ class App extends Component {
         <View style={styles.headerView}>
           <Text style={styles.headerTitle}>MATCH THE FOLLOWING</Text>
         </View>
-        <View style={{ marginTop: 20 }}>
+        <View style={styles.flatListView}>
           <FlatList
             data={this.state.data}
             renderItem={({ item }) =>
@@ -159,6 +156,9 @@ const styles = StyleSheet.create({
     fontSize: 20, 
     fontWeight: 'bold', 
     paddingLeft: 10 
+  },
+  flatListView : {
+    marginTop: 20
   },
   itemView: {
     width: ((width) / 4) - 20,
